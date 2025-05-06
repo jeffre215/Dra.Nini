@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Dra. Ninibeth Fernandez</title>
+    <link rel="shortcut icon" href="assets/img/logonf.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <!-- Video inicio -->
+    <div id="hero-section" class="hero-section">
+        <video autoplay muted loop playsinline class="bg-video">
+          <source src="assets/img/videoindex.mp4" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
+    </div>
+      
+    <!-- Inicio Barra de navegación -->
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <!-- Espaciador para compensar la altura del navbar -->
+        <div style="height: 250px;"></div>
+
+        <div class="container-fluid position-relative justify-content-center align-items-center">
+      
+          <!-- LOGO CENTRADO -->
+          <a class="navbar-brand mx-auto position-absolute top-50 start-50 translate-middle" href="#">
+            <img src="assets/img/LOGO.png" alt="Logo" class="navbar-logo">
+          </a>
+      
+          <!-- HAMBURGUESA A LA DERECHA -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- OFFCANVAS -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Acercademi.html">Acerca de mí</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Servicios
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="calidadpiel.html">Calidad de piel</a></li>
+                    <li><a class="dropdown-item" href="Neuromod.html">Neuromoduladores</a></li>
+                    <li><a class="dropdown-item" href="rellenofacial.html">Rellenos faciales</a></li>
+                    <li><a class="dropdown-item" href="flacidez.html">Flacidez</a></li>
+                    <li><a class="dropdown-item" href="tratamientoscorporales.html">Tratamientos corporales</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    <!-- Inicio Banner info -->
+    <div class="container-dra">
+        <div>
+            <img src="assets/img/Añadir un título.jpg" alt="dra.nini">
+        </div>
+    </div>
+
+    <!-- Inicio Antes y después -->
+<!-- Sección Antes y Después -->
+<div class="before-after-section">
+  <div class="title-before-after-section">
+    <p>Antes y Después</p>
+  </div>
+
+  <div class="image-circles">
+    <div class="circle-container">
+      <img src="assets/img/idenlabios.png" class="circle-img" onclick="openModal('assets/img/labios1.png', 'assets/img/labios2.png')" alt="Tratamiento de labios">
+      <h3 class="circle-label">Tratamiento de labios</h3>
+    </div>
+    <div class="circle-container">
+      <img src="assets/img/ttoantiarrugas.png" class="circle-img" onclick="openModal('assets/img/neuromod1.png', 'assets/img/neuromod2.png')" alt="Neuromoduladores">
+      <h3 class="circle-label">Neuromoduladores</h3>
+    </div>
+    <div class="circle-container">
+      <img src="assets/img/induct.jpg" class="circle-img" onclick="openModal('assets/img/labios1.png', 'assets/img/labios2.png')" alt="Inductores de colágeno">
+      <h3 class="circle-label">Inductores de colágeno</h3>
+    </div>
+    <div class="circle-container">
+      <img src="assets/img/rinomodfacial.png" class="circle-img" onclick="openModal('assets/img/rino1.png', 'assets/img/rino2.png')" alt="Rinomodelado">
+      <h3 class="circle-label">Rinomodelado</h3>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <div class="slider-container" onclick="event.stopPropagation()">
+      <div class="img-wrapper">
+        <img id="beforeImg" src="" alt="Antes">
+        <div class="after-wrapper">
+          <img id="afterImg" src="" alt="Después">
+        </div>
+        <div class="slider-bar" id="sliderBar"></div>
+        <div class="slider-hint"><span>&#8596;</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección Tratamientos Favoritos -->
+<section class="servicio-scroll">
+  <h2 class="servicio-section-titulo" id="servicioTitulo">Nuestros Tratamientos Favoritos</h2>
+
+  <div class="servicio-item" style="background-image: url('assets/img/Aumentolabios.jpg');">
+    <a class="btb-frecuentes" style="text-decoration: none;" href="rellenofacial.html">
+      <h1 class="servicio-titulo">Aumento de labios</h1>
+    </a>
+  </div>
+  <div class="servicio-item" style="background-image: url('assets/img/neuromode.jpg');">
+    <a class="btb-frecuentes" style="text-decoration: none;" href="Neuromod.html">
+      <h1 class="servicio-titulo">Neuromoduladores</h1>
+    </a>
+  </div>
+  <div class="servicio-item" style="background-image: url('assets/img/colageno.jpg');">
+    <a class="btb-frecuentes" style="text-decoration: none;" href="calidadpiel.html">
+      <h1 class="servicio-titulo">Inductores de colágeno</h1>
+    </a>
+  </div>
+</section>
+
+    <!-- Inicio reseñas -->
+    <div class="container my-5">
+        <div class="reseñatext">
+            <h1>Nuestros clientes lo dicen</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Tarjeta 1 -->
+          <div class="col-md-4">
+            <div class="card review-card shadow-sm">
+              <div class="card-body text-center">
+                <div class="review-stars mb-3">
+                  ⭐⭐⭐⭐⭐
+                </div>
+                <p class="review-text">“La Dra Ninibeth es excelente, siempre que necesito realizarme algún retoque ella me aconseja que me vendría mejor, sus resultados son 100/10, siempre confío en su experiencia y profesionalidad.! Siempre volveré, no la cambio por nada.! 🫶…”</p>
+                <h5 class="reviewer-name mt-3">— Nataly Peña</h5>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 2 -->
+          <div class="col-md-4">
+            <div class="card review-card shadow-sm">
+              <div class="card-body text-center">
+                <div class="review-stars mb-3">
+                  ⭐⭐⭐⭐⭐
+                </div>
+                <p class="review-text">“No me pongo en otras manos que no sean las de ella....
+                  Medicina estética con estilo y delicadeza...
+                  Aconsejo 100%, visitarla y dejar que la doctora os asesore.
+                  Me encanta ❤️”</p>
+                <h5 class="reviewer-name mt-3">— Beatriz Dominguez</h5>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Tarjeta 3 -->
+          <div class="col-md-4">
+            <div class="card review-card shadow-sm">
+              <div class="card-body text-center">
+                <div class="review-stars mb-3">
+                  ⭐⭐⭐⭐⭐
+                </div>
+                <p class="review-text">“Me hice un tratamiento Skinbooster con la Dra. Ninibeth y estoy encantada con los resultados. Mi piel luce hidratada, luminosa y más suave. Además fue muy profesional, me explicó todo con detalle y el procedimiento fue rápido e indoloro. ¡100% recomendada! Volveré sin duda.”</p>
+                <h5 class="reviewer-name mt-3">— Viki Coavas</h5>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    <!-- Inicio mostrario RRSS -->
+    <section class="instagram-reels py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Lo natural de ser tu</h2>
+          <div class="row justify-content-center g-4">
+            
+            <!-- Reel 1 -->
+            <div class="col-md-4">
+              <div class="reel-wrapper">
+                <iframe src="https://www.instagram.com/reel/DHnz252sMEV/embed" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            
+            <!-- Reel 2 -->
+            <div class="col-md-4">
+              <div class="reel-wrapper">
+                <iframe src="https://www.instagram.com/reel/DHbEIb6s40K/embed" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            
+            <!-- Reel 3 -->
+            <div class="col-md-4">
+              <div class="reel-wrapper">
+                <iframe src="https://www.instagram.com/reel/DG3R887ggyl/embed" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+    <!-- Inicio botón whatsapp-->
+    <a href="https://wa.me/34613255679?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita." 
+        class="whatsapp-float" 
+        target="_blank" 
+        aria-label="Escríbenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <img src="assets/img/Whatsapp.jpg" alt="">
+    </a>
+
+   <!-- Botón solicitar cita -->
+    <a href="https://wa.me/34613255679?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita." class="btn-cita-burbuja" id="btnCita">
+    Solicitar cita
+    </a>
+    <!-- Inicio footer -->
+    <footer class="footer">
+        <div class="footer-container">
+          
+          <div class="footer-block">
+            <img src="assets/img/logonf.jpg" alt="Logo" class="footer-logo">
+          </div>
+      
+          <div class="footer-block">
+            <h3>Horario</h3>
+            <p>Lun - vie: 11:00 - 20:00</p>
+          </div>
+      
+          <div class="footer-block">
+            <h3>Dirección</h3>
+            <a href="https://www.google.com/maps/search/?api=1&query=Calle+de+Blasco+de+Garay,+7,+Madrid" target="_blank" rel="noopener noreferrer">
+              Calle de Blasco de Garay, 7
+            </a>            
+            <p>Chamberí, 28015<p>
+            <p>Madrid, España</p>
+          </div>
+      
+          <div class="footer-block">
+            <h3>Correo</h3>
+            <p>dra.ninifer@gmail.com</p>
+          </div>
+        </div>
+    </footer>
+      <!-- Fin footer -->
+       
+    <!-- Espacio para que el footer no quede tapado por el cintillo -->
+    <div class="spacefooter" style="height: 60px;"></div>
+
+    <!-- Inicio script nav bar -->
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+        let lastScrollTop = 0;
+      
+        // Transición suave
+        navbar.style.transition = 'top 0.5s ease-in-out';
+        navbar.style.top = '0px'; // visible al inicio
+      
+        window.addEventListener('scroll', function () {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const isMobile = window.innerWidth <= 768; // puedes ajustar a tu gusto
+      
+          const threshold = isMobile ? 40 : 10; // más permisivo en móviles
+      
+          if (scrollTop <= threshold) {
+            navbar.style.top = '0px'; // mostrar
+          } else if (scrollTop > lastScrollTop) {
+            // Scroll hacia abajo: ocultar
+            navbar.style.top = `-${navbarHeight}px`;
+          } else {
+            // Scroll hacia arriba pero aún no en el tope
+            if (scrollTop <= threshold) {
+              navbar.style.top = '0px'; // reaparecer suavemente
+            }
+          }
+      
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+      </script>
+      
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Inicio script botón pedir cita -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const btnCita = document.getElementById("btnCita");
+          const btnWhatsapp = document.querySelector(".whatsapp-float");
+      
+          // Mostrar burbuja al cargar
+          setTimeout(() => {
+            btnCita.classList.add("show");
+          }, 600);
+      
+          // Al hacer scroll, transformar a cintillo y ajustar WhatsApp
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 20) {
+              btnCita.classList.add("scrolled");
+              btnWhatsapp.classList.add("ajustado");
+            } else {
+              btnCita.classList.remove("scrolled");
+              btnWhatsapp.classList.remove("ajustado");
+            }
+          });
+        });
+      </script>
+    
+      <!-- Servicios frecuentes -->
+      <script>
+        function handleScrollReveal() {
+          const cards = document.querySelectorAll('.servicio-item');
+          const titulo = document.getElementById('servicioTitulo');
+          const windowHeight = window.innerHeight;
+      
+          // Mostrar u ocultar tarjetas
+          cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < windowHeight - 100 && rect.bottom > 100) {
+              card.classList.add('visible');
+            } else {
+              card.classList.remove('visible');
+            }
+          });
+      
+          // Mostrar u ocultar título
+          const tituloRect = titulo.getBoundingClientRect();
+          if (tituloRect.top < windowHeight - 100 && tituloRect.bottom > 100) {
+            titulo.classList.add('visible');
+          } else {
+            titulo.classList.remove('visible');
+          }
+        }
+      
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('load', handleScrollReveal);
+      </script>    
+
+    <!-- Script modal -->
+    <script>
+      let isDragging = false;
+      const modal = document.getElementById('modal');
+      const beforeImg = document.getElementById('beforeImg');
+      const afterImg = document.getElementById('afterImg');
+      const sliderBar = document.getElementById('sliderBar');
+      const afterWrapper = document.querySelector('.after-wrapper');
+      const sliderHint = document.querySelector('.slider-hint');
+    
+      function openModal(beforeSrc, afterSrc) {
+        beforeImg.src = beforeSrc;
+        afterImg.src = afterSrc;
+        modal.classList.add('active');
+        setSlider(50); // Centrado por defecto
+      }
+    
+      function closeModal(event) {
+        if (event.target === modal || event.target.classList.contains('close')) {
+          modal.classList.remove('active');
+        }
+      }
+    
+      function setSlider(percent) {
+        afterWrapper.style.width = `${percent}%`;
+        sliderBar.style.left = `${percent}%`;
+        sliderHint.style.left = `${percent}%`; // Aquí movemos la flecha con la barra
+      }
+    
+      const sliderContainer = document.querySelector('.slider-container');
+      sliderContainer.addEventListener('mousedown', () => isDragging = true);
+      sliderContainer.addEventListener('mouseup', () => isDragging = false);
+      sliderContainer.addEventListener('mouseleave', () => isDragging = false);
+    
+      sliderContainer.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        const rect = sliderContainer.getBoundingClientRect();
+        let percent = ((e.clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        setSlider(percent);
+      });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Dra. Ninibeth Fernandez</title>
+    <link rel="shortcut icon" href="assets/img/logonf.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="spaceblankadmi"></div>
+    <nav class="custom-navbar">
+      <div class="custom-container">
+        <a class="custom-brand" href="index.html">Dra. Ninibeth Fernández</a>
+        
+        <ul class="custom-nav">
+          <li class="custom-item"><a class="custom-link" href="#"><img src="assets/img/ig.png" alt="Instagram"></a></li>
+          <li class="custom-item"><a class="custom-link" href="#"><img src="assets/img/fb.png" alt="Facebook"></a></li>
+          <li class="custom-item"><a class="custom-link" href="#"><img src="assets/img/tiktok.png" alt="TikTok"></a></li>
+          <li class="custom-item"><a class="custom-link" href="#"><img src="assets/img/mail.png" alt="Correo"></a></li>
+          <div class="dropdown custom-dropdown2">
+            <button class="dropdown-toggle2" onclick="toggleDropdown()" aria-label="Menú desplegable">
+              <!-- Ícono de hamburguesa (tres líneas) -->
+              <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="4" width="24" height="2" fill="white"/>
+                <rect y="11" width="24" height="2" fill="white"/>
+                <rect y="18" width="24" height="2" fill="white"/>
+              </svg>
+            </button>          
+            <ul class="dropdown-menu2" id="customDropdownMenu">
+              <li><a href="calidadpiel.html">Calidad de piel</a></li>
+              <li><a href="flacidez.html">Flacidez</a></li>
+              <li><a href="Neuromod.html">Neuromoduladores</a></li>
+              <li><a href="rellenofacial.html">Relleno facial</a></li>
+              <li><a href="tratamientoscorporales.html">Tratamientos corporales</a></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </nav>  
+  <!-- Titulo contenido -->
+<div class="calidadcontainer">
+    <div class="calidad-title" data-aos="fade-down">
+      <p>Relaja, suaviza y revela tu mejor versión</p>
+    </div>
+    <div class="calidad-info" data-aos="fade-down">
+        <p><h2>Los tratamientos con orecisión utilizando neuromoduladores que permiten relajar zonas específicas del rostro, mejorando líneas de expresión sin modificar tu esencia. Son ideales para suavizar el tercio superior facial, tratar el bruxismo y reducir la sudoración excesiva (hiperhidrosis), todo con un enfoque sutil, eficaz y personalizado. Ayudando a armonizar tus rasgos y lograr resultados que se sientan tan naturales como tú. Cada tratamiento está pensado para mejorar tu bienestar y realzar lo mejor de ti, manteniendo la frescura y expresión de tu rostro.</h2>
+        </p>
+    </div>
+  </div>
+  <!-- Inicio contenido -->
+    <div class="card2-grid">
+        <div class="card2" onclick="this.classList.toggle('flipped')" data-aos="fade-up">
+          <div class="card2-inner">
+            <div class="card2-front">
+              <img src="assets/img/tercioneuro.png" alt="Estética Facial">
+              <h3> Tercio superior </h3>
+            </div>
+            <div class="card2-back">
+              <p>Este tratamiento permite atenuar líneas de expresión en la frente, entrecejo y patas de gallo, preservando la naturalidad del rostro y la expresividad de la mirada. Es una técnica segura y precisa que relaja de forma controlada los músculos responsables de las arrugas dinámicas, logrando un aspecto más descansado, armónico y rejuvenecido. Ideal para quienes buscan resultados sutiles pero notables, sin alterar su esencia.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card2" onclick="this.classList.toggle('flipped')" data-aos="fade-up">
+          <div class="card2-inner">
+            <div class="card2-front">
+              <img src="assets/img/hiperneuro.png" alt="Masajes">
+              <h3>Hiperhidrosis</h3>
+            </div>
+            <div class="card2-back">
+              <p>Este tratamiento controlar de forma efectiva la sudoración excesiva en zonas como axilas, manos o pies, devolviéndote la tranquilidad en tu día a día. Este tratamiento actúa directamente sobre las glándulas sudoríparas, reduciendo la producción de sudor sin alterar la expresión natural del cuerpo. Una solución segura y discreta que mejora tu bienestar, tu imagen y tu confianza, para que nada opaque tu presencia./p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card2" onclick="this.classList.toggle('flipped')"data-aos="fade-up">
+            <div class="card2-inner">
+              <div class="card2-front">
+                <img src="assets/img/bruxismoneuro.png" alt="Masajes">
+                <h3>Bruxismo</h3>
+              </div>
+              <div class="card2-back">
+                <p>Este tratamiento permite relajar los músculos maseteros responsables de la tensión mandibular, reduciendo el desgaste dental, los dolores de cabeza y la sobrecarga facial. Esta técnica médica no solo mejora la calidad del descanso y alivia molestias, sino que también suaviza el contorno facial, afinando la línea mandibular sin comprometer la funcionalidad. Un tratamiento que une salud y estética de forma natural y armónica.</p>
+              </div>
+            </div>
+          </div>
+</div>       
+<!-- Inicio valoración gratis -->
+<div class="inspiracion-section">
+    <div class="inspiracion-img">
+      <img src="assets/img/Agendarcita.png" alt="Doctora" />
+    </div>
+    <div class="inspiracion-contenido">
+      <p class="frase">Tu piel es un reflejo de tu bienestar.</p>
+      <p class="frase">¡Agenda una valoración gratuita!</p>
+      <a href="https://wa.me/1234567890" class="cta-btn">Agendar cita</a>
+    </div>
+  </div>
+  
+<!-- Inicio footer -->
+<footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-block">
+        <img src="assets/img/logonf.jpg" alt="Logo" class="footer-logo">
+      </div>
+  
+      <div class="footer-block">
+        <h3>Horario</h3>
+        <p>Lun - vie: 11:00 - 20:00</p>
+      </div>
+  
+      <div class="footer-block">
+        <h3>Dirección</h3>
+        <a href="https://www.google.com/maps/search/?api=1&query=Calle+de+Blasco+de+Garay,+7,+Madrid" target="_blank" rel="noopener noreferrer">
+          Calle de Blasco de Garay, 7
+        </a>            
+        <p>Chamberí, 28015<p>
+        <p>Madrid, España</p>
+      </div>
+  
+      <div class="footer-block">
+        <h3>Correo</h3>
+        <p>dra.ninifer@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+<!-- Fin footer -->
+
+      <!-- Scroll animation start -->
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+<!-- Scroll animation fin data-aos="fade-up -->
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("customDropdownMenu");
+    const button = document.querySelector(".dropdown-toggle2");
+
+    menu.classList.toggle("show");
+
+    // Escucha un solo clic fuera para cerrar el menú
+    document.addEventListener("click", function handler(e) {
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.classList.remove("show");
+        document.removeEventListener("click", handler);
+      }
+    });
+  }
+</script>
+</body>
+</html>
