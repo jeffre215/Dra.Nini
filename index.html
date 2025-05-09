@@ -395,6 +395,57 @@
         setSlider(percent);
       });
     </script>
+
+    <!-- pantallas tactiles -->
+    <script>
+      let isDragging = false;
+      let sliderBar = document.getElementById('sliderBar');
+      let afterWrapper = document.querySelector('.after-wrapper');
+      let sliderContainer = document.querySelector('.slider-container');
     
+      function setSlider(x) {
+        const rect = sliderContainer.getBoundingClientRect();
+        let offset = x - rect.left;
+        let percentage = offset / rect.width;
+    
+        if (percentage < 0) percentage = 0;
+        if (percentage > 1) percentage = 1;
+    
+        afterWrapper.style.width = `${percentage * 100}%`;
+        sliderBar.style.left = `${percentage * 100}%`;
+      }
+    
+      function startDrag(e) {
+        isDragging = true;
+        if (e.type === 'touchstart') {
+          setSlider(e.touches[0].clientX);
+        } else {
+          setSlider(e.clientX);
+        }
+      }
+    
+      function onDrag(e) {
+        if (!isDragging) return;
+        if (e.type === 'touchmove') {
+          setSlider(e.touches[0].clientX);
+        } else {
+          setSlider(e.clientX);
+        }
+      }
+    
+      function stopDrag() {
+        isDragging = false;
+      }
+    
+      // Desktop
+      sliderContainer.addEventListener('mousedown', startDrag);
+      window.addEventListener('mousemove', onDrag);
+      window.addEventListener('mouseup', stopDrag);
+    
+      // Mobile
+      sliderContainer.addEventListener('touchstart', startDrag, { passive: true });
+      window.addEventListener('touchmove', onDrag, { passive: true });
+      window.addEventListener('touchend', stopDrag);
+    </script>
 </body>
 </html>
