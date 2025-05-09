@@ -2,11 +2,6 @@
     background-color: #f6f3f0;
 }
 
-html, body {
-  overscroll-behavior: contain;
-  touch-action: none;
-}
-
 /* VIDEO */
 .hero-section {
     position: relative;
