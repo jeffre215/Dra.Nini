@@ -425,7 +425,7 @@
     
       // Eventos para táctil
       sliderContainer.addEventListener('touchstart', startDrag, { passive: true });
-      window.addEventListener('touchmove', onDrag, { passive: true });
+      window.addEventListener('touchmove', onDrag, { passive: false });
       window.addEventListener('touchend', stopDrag);
     </script>    
 </body>
