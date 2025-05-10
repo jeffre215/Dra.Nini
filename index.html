@@ -407,11 +407,12 @@
       function onDrag(e) {
         if (!isDragging) return;
         if (e.type === 'touchmove') {
-          setSlider(e.touches[0].clientX);
+        e.preventDefault(); // <- Esto evita el salto o scroll
+        setSlider(e.touches[0].clientX);
         } else {
-          setSlider(e.clientX);
+        setSlider(e.clientX);
         }
-      }
+        }
     
       function stopDrag() {
         isDragging = false;
