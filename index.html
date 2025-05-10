@@ -398,6 +398,7 @@
       function startDrag(e) {
         isDragging = true;
         if (e.type === 'touchstart') {
+          e.preventDefault(); // <- Evita el scroll táctil
           setSlider(e.touches[0].clientX);
         } else {
           setSlider(e.clientX);
@@ -407,12 +408,12 @@
       function onDrag(e) {
         if (!isDragging) return;
         if (e.type === 'touchmove') {
-        e.preventDefault(); // <- Esto evita el salto o scroll
-        setSlider(e.touches[0].clientX);
+          e.preventDefault(); // <- Evita el scroll mientras se arrastra
+          setSlider(e.touches[0].clientX);
         } else {
-        setSlider(e.clientX);
+          setSlider(e.clientX);
         }
-        }
+      }
     
       function stopDrag() {
         isDragging = false;
@@ -427,6 +428,6 @@
       sliderContainer.addEventListener('touchstart', startDrag, { passive: false });
       window.addEventListener('touchmove', onDrag, { passive: false });
       window.addEventListener('touchend', stopDrag);
-    </script>    
+    </script>        
 </body>
 </html>

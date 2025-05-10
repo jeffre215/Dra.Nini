@@ -275,6 +275,8 @@
   aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: 20px;
+  cursor: col-resize;
+  touch-action: none; /* <- evita desplazamientos táctiles */
 }
 
 .img-wrapper {
