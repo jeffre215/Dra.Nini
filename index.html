@@ -102,18 +102,13 @@
   </div>
 
   <!-- Modal -->
-  <div id="modal" class="modal" onclick="closeModal(event)">
-    <span class="close" onclick="closeModal(event)">&times;</span>
-    <div class="slider-container" onclick="event.stopPropagation()">
-      <div class="img-wrapper">
-        <img id="beforeImg" src="" alt="Antes">
-        <div class="after-wrapper">
-          <img id="afterImg" src="" alt="Después">
-        </div>
-        <div class="slider-bar" id="sliderBar"></div>
-        <div class="slider-hint"><span>&#8596;</span></div>
-      </div>
-    </div>
+  <!-- Modal nuevo con navegación por flechas -->
+<div id="modal" class="modal" onclick="closeModal(event)">
+  <span class="close" onclick="closeModal(event)">&times;</span>
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="arrow left" onclick="changeImage(-1)">&#10094;</span>
+    <img id="modalImage" src="" alt="Antes o Después">
+    <span class="arrow right" onclick="changeImage(1)">&#10095;</span>
   </div>
 </div>
 
@@ -356,20 +351,16 @@
     <!-- Script modal -->
     <script>
       const modal = document.getElementById('modal');
-      const beforeImg = document.getElementById('beforeImg');
-      const afterImg = document.getElementById('afterImg');
-      const sliderBar = document.getElementById('sliderBar');
-      const afterWrapper = document.querySelector('.after-wrapper');
-      const sliderHint = document.querySelector('.slider-hint');
-      const sliderContainer = document.querySelector('.slider-container');
+      const modalImage = document.getElementById('modalImage');
     
-      let isDragging = false;
+      let currentImages = [];
+      let currentIndex = 0;
     
       function openModal(beforeSrc, afterSrc) {
-        beforeImg.src = beforeSrc;
-        afterImg.src = afterSrc;
+        currentImages = [beforeSrc, afterSrc];
+        currentIndex = 0;
+        modalImage.src = currentImages[currentIndex];
         modal.classList.add('active');
-        setSlider(50); // Centrado
       }
     
       function closeModal(event) {
@@ -378,61 +369,12 @@
         }
       }
     
-      function setSlider(percentOrX) {
-        const rect = sliderContainer.getBoundingClientRect();
-        let percent;
-    
-        if (typeof percentOrX === "number" && percentOrX >= 0 && percentOrX <= 100) {
-          percent = percentOrX;
-        } else {
-          let offset = percentOrX - rect.left;
-          percent = (offset / rect.width) * 100;
-          percent = Math.max(0, Math.min(100, percent));
-        }
-    
-        afterWrapper.style.width = `${percent}%`;
-        sliderBar.style.left = `${percent}%`;
-        sliderHint.style.left = `${percent}%`;
+      function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) currentIndex = currentImages.length - 1;
+        if (currentIndex >= currentImages.length) currentIndex = 0;
+        modalImage.src = currentImages[currentIndex];
       }
-    
-      function startDrag(e) {
-        isDragging = true;
-        if (e.type === 'touchstart') {
-          setSlider(e.touches[0].clientX);
-        } else {
-          setSlider(e.clientX);
-        }
-      }
-    
-      function onDrag(e) {
-        if (!isDragging) return;
-        if (e.type === 'touchmove') {
-        e.preventDefault(); // <- Esto evita el salto o scroll
-        setSlider(e.touches[0].clientX);
-        } else {
-        setSlider(e.clientX);
-        }
-        }
-    
-      function stopDrag() {
-        isDragging = false;
-      }
-    
-      // Eventos para mouse
-      sliderContainer.addEventListener('mousedown', startDrag);
-      window.addEventListener('mousemove', onDrag);
-      window.addEventListener('mouseup', stopDrag);
-    
-      // Eventos para táctil
-      sliderContainer.addEventListener('touchstart', startDrag, { passive: false });
-      window.addEventListener('touchmove', onDrag, { passive: false });
-      window.addEventListener('touchend', stopDrag);
-      
-       // Bloquear scroll táctil dentro del modal
-      modal.addEventListener('touchmove', function(e) {
-        if (e.cancelable) e.preventDefault();
-      }, { passive: false });
-
-    </script>  
+    </script>    
 </body>
 </html>
