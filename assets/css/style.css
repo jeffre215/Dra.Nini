@@ -275,8 +275,6 @@
   aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: 20px;
-  cursor: col-resize;
-  touch-action: none; /* <- evita desplazamientos táctiles */
 }
 
 .img-wrapper {
@@ -951,7 +949,7 @@
     }
   
     .custom-nav img {
-      width: 2.8rem;
+      width: 1.8rem;
       max-width: 30px;
     }
   }
